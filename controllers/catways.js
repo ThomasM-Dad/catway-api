@@ -31,6 +31,9 @@ exports.add = async (req, res) => {
         const catway = await catwayService.add(data);
         return res.status(201).json(catway);
     } catch (error) {
+        if (error.code === 11000) {
+            return res.status(400).json({ message: 'Ce numéro de catway existe déjà' });
+        }
         return res.status(400).json({ message: error.message });
     }
 }

@@ -31,6 +31,9 @@ exports.add = async (req, res) => {
         const user = await userService.add(data);
         return res.status(201).json(user);
     } catch (error) {
+        if (error.code === 11000) {
+            return res.status(400).json({ message: 'Cet email est déjà utilisé' });
+        }
         return res.status(400).json({ message: error.message });
     }
 }
