@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-const service = require('../services/users');
+const controller = require('../controllers/users');
 
-router.get('/', service.getAll);
-router.get('/:email', service.getByEmail);
-router.post('/', service.add);
-router.put('/:email', service.update);
-router.delete('/:email', service.delete);
+router.get('/', controller.getAll);
+router.get('/:email', controller.getByEmail);
+router.post('/', controller.add);
+router.put('/:email', controller.update);
+router.delete('/:email', controller.delete);
 
 module.exports = router;
