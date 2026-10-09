@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord - Port de Plaisance Russel</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Port de Plaisance Russel</h1>
+        <nav class="nav" aria-label="Navigation principale">
+            <ul class="nav__list">
+                <li><a href="/dashboard.html" class="nav__link">Tableau de bord</a></li>
+                <li><a href="/catways.html" class="nav__link">Catways</a></li>
+                <li><a href="/reservations.html" class="nav__link">Réservations</a></li>
+                <li><a href="/users.html class="nav__link">Utilisateurs</a></li>
+                <li><a href="/docs" class="nav__link"></a>Documentation</li>
+                <li><button class="nav__button" id="logout-button" type="button">Déconnexion</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <section class="dashboard__info">
+            <h2 class="dashboard__title">Bienvenue, <span id="user-name"></span></h2>
+            <p>Adresse e-mail : <span id="user-email"></span></p>
+            <p>Aujourd'hui : <time id="today"></time></p>
+        </section>
+
+        <section class="dashboard__reservations">
+            <h2 class="dashboard__title">Réservations en cours</h2>
+            <p id="reservations-empty" hidden> Aucune réservation en cours.</p>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Catway</th>
+                            <th>Client</th>
+                            <th>Bateau</th>
+                            <th>Début</th>
+                            <th>Fin</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservations-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    
+    <script src="/javascripts/dashboard.js"></script>
+</body>
+</html>

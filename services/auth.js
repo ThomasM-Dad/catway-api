@@ -28,3 +28,11 @@ exports.login = async (email, password) => {
         user : { _id: user._id, username: user.username, email: user.email }
     };
 }
+
+exports.getProfile = async(id) => {
+    const user = await User.findById(id).select('username email');
+    if (!user) {
+        throw new Error('user_not_found');
+    }
+    return user;
+}
