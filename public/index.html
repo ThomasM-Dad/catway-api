@@ -1,13 +1,45 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <title>Express</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Port de Plaisance Russel</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
-</body>
+  <header class="header">
+    <h1 class="header__title">Port de Plaisance Russel</h1>
+  </header>
 
+  <main class="home">
+    <section class="home__intro">
+      <h2 class="home_subtitle">Gestion des réservations de catways</h2>
+      <p class="home__text">
+        Cette application permet à la capitainerie de gérer les catways, leurs réservations et les utilisateurs de
+        l'application.
+      </p>
+      <p class="home__text">
+        L'API est privée : connectez-vous pour accéder au tableau de bord.
+      </p>
+      <a href="/docs" class="home__link">Consulter la documentation de l'API</a>
+    </section>
+
+    <section class="home__login">
+      <h2 class="home__subtitle">Connexion</h2>
+      <form class="form" id="login-form" novalidate>
+        <label for="email" class="form__label">Adresse e-mail</label>
+        <input type="email" id="email" name="email" class="form__input" autocomplete="email" required>
+
+        <label for="password" class="form__label">Mot de passe</label>
+        <input type="password" id="password" name="password" class="form__input" autocomplete="current-password" required>
+
+        <p class="form__error" id="login-error" role="alert" hidden></p>
+
+        <button class="form__button" type="submit">Se connecter</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/javascripts/login.js"></script>
+</body>
 </html>
