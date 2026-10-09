@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port de Plaisance Russel</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Port de Plaisance Russel</h1>
+        <nav class="nav" aria-label="Navigation principale">
+            <ul class="nav__list">
+                <li><a href="/dashboard.html" class="nav__link">Tableau de bord</a></li>
+                <li><a href="/catways.html" class="nav__link">Catways</a></li>
+                <li><a href="/reservations.html" class="nav__link">Réservations</a></li>
+                <li><a href="/users.html" class="nav__link">Utilisateurs</a></li>
+                <li><a href="/docs" class="nav__link"></a>Documentation</li>
+                <li><button class="nav__button" id="logout-button" type="button">Déconnexion</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section class="card">
+            <h2 class="card__title">Liste des catways</h2>
+            <p id="list-message" hidden></p>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Numéro</th>
+                            <th>Type</th>
+                            <th>État</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="catways-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card" id="details">
+            <h2 class="card__title">Détails du catway</h2>
+            <dl class="details" id="details-list"></dl>
+        </section>
+
+        <section class="card">
+            <h2 class="card__title" id="form-title">Ajouter un catway</h2>
+            <form id="catway-form" class="form">
+                <label for="catwayNumber" class="form__label">Numéro</label>
+                <input id="catwayNumber" type="number" class="form__input" name="catwayNumber" min="1" required>
+
+                <label for="catwayType" class="form__label">Type</label>
+                <select name="catwayType" id="catwayType" class="form__input" required>
+                    <option value="">Choisir un type</option>
+                    <option value="long">long</option>
+                    <option value="short">short</option>
+                </select>
+
+                <label for="catwayState" class="form__label">État</label>
+                <input type="text" class="form__input" id="catwayState" name="catwayState" required>
+
+                <p class="form__error" id="form-error" role="alert" hidden></p>
+
+                <div class="form__actions">
+                    <button class="form__button" type="submit" id="submit-button">Ajouter</button>
+                    <button class="form__button form__button--secondary" type="button" id="cancel-button" hidden>Annuler</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="/javascripts/common.js"></script>
+    <script src="/javascripts/catways.js"></script>
+    
+</body>
+</html>

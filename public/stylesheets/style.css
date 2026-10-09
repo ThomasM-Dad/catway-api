@@ -163,3 +163,72 @@ body {
   background: var(--color-bg);
   color: var(--color-primary);
 }
+
+.page {
+  display: grid;
+  gap: 2rem;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card__title {
+  margin-top: 0;
+  color: var(--color-primary);
+}
+
+.table__button {
+  margin-right: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.table__button:hover {
+  background: var(--color-bg);
+}
+
+.table__button--danger {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.form__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.form__button--secondary {
+  border: 1px solid var(--color-primary);
+  background: #fff;
+  color: var(--color-primary);
+}
+
+.form__button--secondary:hover {
+  background: var(--color-bg);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1rem;
+  margin: 0;
+}
+
+.details dt {
+  font-weight: 600;
+}
+
+.details dd {
+  margin: 0;
+}
