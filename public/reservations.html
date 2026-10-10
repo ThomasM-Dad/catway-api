@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservations - Port de Plaisance Russel</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Port de Plaisance Russel</h1>
+        <nav class="nav" aria-label="Navigation principale">
+            <ul class="nav__list">
+                <li><a href="/dashboard.html" class="nav__link">Tableau de bord</a></li>
+                <li><a href="/catways.html" class="nav__link">Catways</a></li>
+                <li><a href="/reservations.html" class="nav__link">Réservations</a></li>
+                <li><a href="/users.html" class="nav__link">Utilisateurs</a></li>
+                <li><a href="/docs" class="nav__link"></a>Documentation</li>
+                <li><button class="nav__button" id="logout-button" type="button">Déconnexion</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section class="card">
+            <h2 class="card__title">Réservations par catway</h2>
+
+            <div class="form">
+                <label for="catway-select" class="form__label"></label>
+                <select id="catway-select" class="form__input">
+                    <option value="">Choisir un catway</option>
+                </select>
+            </div>
+
+            <p id="list-message" hidden></p>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Bateau</th>
+                            <th>Début</th>
+                            <th>Fin</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservations-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card" id="details" hidden>
+            <h2 class="card__title">Détails de la réservation</h2>
+            <dl class="details" id="details-list"></dl>
+        </section>
+
+        <section class="card">
+            <h2 class="card__title" id="form-title">Ajouter une réservation</h2>
+            <form id="reservation-form" class="form">
+                <label for="clientName" class="form__label">Nom du client</label>
+                <input type="text" class="form__input" id="clientName" required>
+
+                <label for="boatName" class="form__label">Nom du bateau</label>
+                <input type="text" class="form__input" id="boatName" name="boatName" required>
+
+                <label for="startDate" class="form__label">Date de début</label>
+                <input type="date" class="form__input" id="startDate" name="startDate" required>
+
+                <label for="endDate" class="form__label">Date de fin</label>
+                <input type="date" class="form__input" id="endDate" name="endDate" required>
+
+                <p class="form__error" id="form-error" role="alert" hidden></p>
+
+                <div class="form__actions">
+                    <button class="form__button" type="submit" id="submit-button">Ajouter</button>
+                    <button class="form__button form__button--secondary" type="button" id="cancel-button" hidden>Annuler</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="/javascripts/common.js"></script>
+    <script src="/javascripts/reservations.js"></script>
+</body>
+</html>
