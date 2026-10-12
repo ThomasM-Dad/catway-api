@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilisateurs - Port de Plaisance Russel</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Port de Plaisance Russel</h1>
+        <nav class="nav" aria-label="Navigation principale">
+            <ul class="nav__list">
+                <li><a href="/dashboard.html" class="nav__link">Tableau de bord</a></li>
+                <li><a href="/catways.html" class="nav__link">Catways</a></li>
+                <li><a href="/reservations.html" class="nav__link">Réservations</a></li>
+                <li><a href="/users.html" class="nav__link">Utilisateurs</a></li>
+                <li><a href="/docs" class="nav__link"></a>Documentation</li>
+                <li><button class="nav__button" id="logout-button" type="button">Déconnexion</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section class="card">
+            <h2 class="card__title">Liste des utilisateurs</h2>
+            <p id="list-message" hidden></p>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nom d'utilisateur</th>
+                            <th>Adresse e-mail</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card" id="details" hidden>
+            <h2 class="card__title">Détails de l'utilisateur</h2>
+            <dl class="details" id="details-list"></dl>
+        </section>
+
+        <section class="card">
+            <h2 class="card__title" id="form-title">Ajouter un utilisateur</h2>
+            <form id="user-form" class="form">
+                <label for="username" class="form__label">Nom d'utilisateur</label>
+                <input type="text" class="form__input" id="username" name="username" required>
+
+                <label for="email" class="form__label">Adresse e-mail</label>
+                <input type="email" class="form__input" id="email" name="email" required>
+
+                <label for="password" class="form__label">Mot de passe</label>
+                <input type="password" class="form__input" id="password" name="password" autocomplete="new-password" minlength="6" required>
+
+                <p class="form__error" id="form-error" role="alert" hidden></p>
+
+                <div class="form__actions">
+                    <button class="form__button" type="submit" id="submit-button">Ajouter</button>
+                    <button class="form__button form__button--secondary" type="button" id="cancel-button" hidden>Annuler</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="/javascripts/common.js"></script>
+    <script src="/javascripts/users.js"></script>
+</body>
+</html>

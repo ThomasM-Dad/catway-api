@@ -51,6 +51,9 @@ exports.update = async (req, res) => {
         if (error.message === 'user_not_found') {
             return res.status(404).json({ message: 'Utilisateur introuvable' });
         }
+        if (error.code === 11000) {
+            return res.status(400).json({ message: 'Cet email est déjà utilisé'});
+        }
         return res.status(400).json({ message: error.message });
     }
 }

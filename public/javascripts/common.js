@@ -10,20 +10,20 @@ async function api(url, options = {}) {
         throw new Error('Session expirée');
     }
 
-    const data = response.status === 204 ? null : await response.json(() => null);
+    const data = response.status === 204 ? null : await response.json().catch(() => null);
 
     if (!response.ok) {
         throw new Error((data && data.message) || 'Erreur serveur');
     }
 
     return data;
+}
 
-    const logoutButton = document.getElementById('logout-button');
+const logoutButton = document.getElementById('logout-button');
 
-    if (logoutButton) {
-        logoutButton.addEventListener('click', async () => {
-            await fetch('/logout');
-            window.location.href ='/';
-        });
-    }
+if (logoutButton) {
+    logoutButton.addEventListener('click', async () => {
+        await fetch('/logout');
+        window.location.href ='/';
+    });
 }
