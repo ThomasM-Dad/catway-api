@@ -5,8 +5,11 @@ const clientOptions = {
 };
 
 // Connexion Mongo (IMPORTANT !)
-const dns = require('node:dns');
-dns.setServers(['8.8.8.8', '8.8.4.4']);
+// Contournement du problème DNS en local (Windows) : inutile en production
+if (process.env.NODE_ENV !== 'production') {
+    const dns = require('node:dns');
+    dns.setServers(['8.8.8.8', '8.8.4.4']);
+}
 
 exports.initClientDbConnection = async () => {
     try {
