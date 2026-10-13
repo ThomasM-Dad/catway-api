@@ -37,7 +37,7 @@ module.exports = {
         tags: ["Authentification"],
         summary: "Se connecter",
         description:
-          "Vérifie l'adresse e-mail et le mot de passe. En cas de succès, un cookie `token` est posé dans le navuigateur.",
+          "Vérifie l'adresse e-mail et le mot de passe. En cas de succès, un cookie `token` est posé dans le navigateur.",
         security: [],
         requestBody: requestBody("Login"),
         responses: {
@@ -82,7 +82,7 @@ module.exports = {
     "/users": {
       get: {
         tags: ["Utilisateurs"],
-        summary: "Lister des utilisateurs",
+        summary: "Lister les utilisateurs",
         responses: {
           200: response("Liste des utilisateurs", {
             type: "array",
@@ -93,12 +93,12 @@ module.exports = {
       },
       post: {
         tags: ["Utilisateurs"],
-        summary: "Créer des utilisateurs",
+        summary: "Créer un utilisateur",
         description:
           "Le mot de passe fait au moins 6 caractères et l'adresse e-mail doit être unique.",
         requestBody: requestBody("UserInput"),
         responses: {
-          201: response("Utilisateur crée", ref("User")),
+          201: response("Utilisateur créé", ref("User")),
           400: errorRef("BadRequest"),
           401: errorRef("Unauthorized"),
         },
@@ -108,7 +108,7 @@ module.exports = {
       parameters: [param("Email")],
       get: {
         tags: ["Utilisateurs"],
-        summary: "Récupérer le détails d'un utilisateur",
+        summary: "Récupérer le détail d'un utilisateur",
         responses: {
           200: response("Utilisateur", ref("User")),
           401: errorRef("Unauthorized"),
@@ -214,7 +214,7 @@ module.exports = {
         tags: ["Réservations"],
         summary: "Créer une réservation",
         description:
-          "La date de fin doit être postérieure à la date de début. Une réservation ne peut pas chevaucher une autre réservation du même catway",
+          "La date de fin doit être postérieure à la date de début. Une réservation ne peut pas chevaucher une autre réservation du même catway.",
         requestBody: requestBody("ReservationInput"),
         responses: {
           201: response("Réservation créée", ref("Reservation")),
@@ -240,7 +240,7 @@ module.exports = {
         tags: ["Réservations"],
         summary: "Modifier une réservation",
         description:
-          "Les champs asbents de la requête ne sont pas modifiés. Le catway ne peut pas être changé.",
+          "Les champs absents de la requête ne sont pas modifiés. Le catway ne peut pas être changé.",
         requestBody: requestBody("ReservationUpdate"),
         responses: {
           200: response("Réservation modifiée", ref("Reservation")),
