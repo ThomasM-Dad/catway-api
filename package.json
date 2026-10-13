@@ -19,7 +19,6 @@
     "mongoose": "^9.10.0",
     "morgan": "^1.12.1",
     "nodemon": "^3.1.14",
-    "parser": "^0.1.4",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
